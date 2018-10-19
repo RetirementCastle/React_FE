@@ -16,8 +16,8 @@ const data = {
       text: 'Transacciones',
       icon: <Web/>,
       items: [
-        {text: 'Gastos',icon: <Web/>,link: '/form'},
-        {text: 'Ingresos',icon: <Web/>,link: '/dashboard'}
+        {text: 'Gastos',icon: <Web/>,link: '/expediture'},
+        {text: 'Ingresos',icon: <Web/>,link: '/entry'}
       ]
     },
     { text: 'Residentes', icon: <PermIdentity/>, link: '/dashboard',

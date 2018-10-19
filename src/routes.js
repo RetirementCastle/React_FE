@@ -6,6 +6,8 @@ import LoginPage from './containers/LoginPage';
 import FormPage from './containers/FormPage';
 import TablePage from './containers/TablePage';
 import Dashboard from './containers/DashboardPage';
+import Expediture from './containers/transactions/Expediture';
+import Entry from './containers/transactions/Entry';
 
 export default (
   <Route>
@@ -14,6 +16,9 @@ export default (
       <IndexRoute component={Dashboard}/>
       <Route path="dashboard" component={Dashboard}/>
       <Route path="form" component={FormPage}/>
+      <Route path="table" component={TablePage}/>
+      <Route path="expediture" component={Expediture}/>
+      <Route path="entry" component={Entry}/>
       <Route path="table" component={TablePage}/>
       <Route path="*" component={NotFoundPage}/>
     </Route>
