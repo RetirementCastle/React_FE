@@ -10,10 +10,34 @@ import ChevronRight from 'material-ui/svg-icons/navigation/chevron-right';
 
 const data = {
   menus: [
-    { text: 'DashBoard', icon: <Assessment/>, link: '/dashboard' },
-    { text: 'Form Page', icon: <Web/>, link: '/form' },
-    { text: 'Table Page', icon: <GridOn/>, link: '/table' },
-    { text: 'Login Page', icon: <PermIdentity/>, link: '/login' }
+    { text: 'Hogares Gediatricos', icon: <GridOn/>, link: '/dashboard' ,
+      items: []},
+    {
+      text: 'Transacciones',
+      icon: <Web/>,
+      items: [
+        {text: 'Gastos',icon: <Web/>,link: '/form'},
+        {text: 'Ingresos',icon: <Web/>,link: '/dashboard'}
+      ]
+    },
+    { text: 'Residentes', icon: <PermIdentity/>, link: '/dashboard',
+      items: [] },
+    { text: 'Empleados', icon: <PermIdentity/>, link: '/dashboard',
+      items: [] },
+    { text: 'Usuarios', icon: <PermIdentity/>, link: '/form',
+      items: [] },
+    { text: 'Familiares', icon: <PermIdentity/>, link: '/dashboard',
+      items: [] },
+    { text: 'Reportes', icon: <Assessment/>, link: '/dashboard',
+      items: [] },
+    { text: 'Dashboard', icon: <Assessment/>, link: '/dashboard',
+      items: [] },
+    { text: 'Forms', icon: <Web/>, link: '/form',
+      items: [] },
+    { text: 'Table Page', icon: <GridOn/>, link: '/table',
+      items: [] },
+    { text: 'Login Page', icon: <PermIdentity/>, link: '/login',
+      items: [] }
   ],
   tablePage: {
     items: [
