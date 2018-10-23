@@ -8,12 +8,14 @@ import TablePage from './containers/TablePage';
 import Dashboard from './containers/DashboardPage';
 import Expediture from './containers/transactions/Expediture';
 import Entry from './containers/transactions/Entry';
+import Info from './containers/deploy/Info';
 
 export default (
   <Route>
     <Route path="login" component={LoginPage}/>
     <Route path="/" component={App}>
       <IndexRoute component={Dashboard}/>
+      <Route path="info" component={Info}/>
       <Route path="dashboard" component={Dashboard}/>
       <Route path="form" component={FormPage}/>
       <Route path="table" component={TablePage}/>

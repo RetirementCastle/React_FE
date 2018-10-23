@@ -20,7 +20,7 @@ const data = {
         {text: 'Ingresos',icon: <Web/>,link: '/entry'}
       ]
     },
-    { text: 'Residentes', icon: <PermIdentity/>, link: '/dashboard',
+    { text: 'Residentes', icon: <PermIdentity/>, link: '/info',
       items: [] },
     { text: 'Empleados', icon: <PermIdentity/>, link: '/dashboard',
       items: [] },
