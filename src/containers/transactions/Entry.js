@@ -48,7 +48,7 @@ class Entry extends Component{
   }
 
   componentWillMount(){
-    fetch('http://localhost:8000/transaction')
+    fetch('http://35.199.81.116:8000/transaction', {mode: 'cors'})
       .then(
         response => response.json()
       )
