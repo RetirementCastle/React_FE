@@ -10,6 +10,7 @@ import Expediture from './containers/transactions/Expediture';
 import Entry from './containers/transactions/Entry';
 import Info from './containers/deploy/Info';
 import EmployeeInfo from './containers/deploy/EmployeeInfo';
+import NHInfo from './containers/deploy/NHInfo'
 
 export default (
   <Route>
@@ -17,6 +18,7 @@ export default (
     <Route path="/" component={App}>
       <IndexRoute component={Dashboard}/>
       <Route path="emp_info" component={EmployeeInfo}/>
+      <Route path="NH" component={NHInfo}/>
       <Route path="info" component={Info}/>
       <Route path="dashboard" component={Dashboard}/>
       <Route path="form" component={FormPage}/>

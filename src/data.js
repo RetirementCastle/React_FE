@@ -24,7 +24,7 @@ const data = {
       items: [] },
     { text: 'Empleados', icon: <PermIdentity/>, link: '/emp_info',
       items: [] },
-    { text: 'Usuarios', icon: <PermIdentity/>, link: '/form',
+    { text: 'Asilos', icon: <PermIdentity/>, link: '/NH',
       items: [] },
     { text: 'Familiares', icon: <PermIdentity/>, link: '/dashboard',
       items: [] },
