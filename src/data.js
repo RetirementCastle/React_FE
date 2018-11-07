@@ -22,7 +22,7 @@ const data = {
     },
     { text: 'Residentes', icon: <PermIdentity/>, link: '/info',
       items: [] },
-    { text: 'Empleados', icon: <PermIdentity/>, link: '/dashboard',
+    { text: 'Empleados', icon: <PermIdentity/>, link: '/emp_info',
       items: [] },
     { text: 'Usuarios', icon: <PermIdentity/>, link: '/form',
       items: [] },
