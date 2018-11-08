@@ -5,8 +5,8 @@ import AllTrans from '../../components/deploy/AllTrans';
 const ShowallTrans = () => {
 
   return (
-    <PageBase title="Hogares Gediatricos"
-              navigation="Application / Hogares Gediatricos">
+    <PageBase title="Transacciones"
+              navigation="Application / Transacciones">
       <div>
         <AllTrans/>
       </div>

@@ -20,6 +20,7 @@ class Allresidents extends React.Component{
                  name
                  state
                  gender
+                 contact_name
                }
             }`,
            errorPolicy: "all",
@@ -33,21 +34,24 @@ class Allresidents extends React.Component{
     render(){
         return(
             <div>
-                {this.state.errors && <p>Ocurrio un error</p>}
-                <Table height={'300px'}>
+                <Table height={'300px'} selectable={false}>
                     <TableHeader>
                         <TableRow>
                             <TableHeaderColumn tooltip="The ID">ID</TableHeaderColumn>
                             <TableHeaderColumn tooltip="The Name">Name</TableHeaderColumn>
                             <TableHeaderColumn tooltip="The Status">Status</TableHeaderColumn>
+                            <TableHeaderColumn tooltip="The gender">Gender</TableHeaderColumn>
+                            <TableHeaderColumn tooltip="The contact's name">Contact's name</TableHeaderColumn>
                         </TableRow>
                     </TableHeader>
                     <TableBody showRowHover={true} stripedRows={true}>
                         {this.state.data.map( (row, index) => (
                             <TableRow key={index} selected={row.selected}>
-                                <TableRowColumn>{index}</TableRowColumn>
+                                <TableRowColumn>{row._id}</TableRowColumn>
                                 <TableRowColumn>{row.name}</TableRowColumn>
                                 <TableRowColumn>{row.state}</TableRowColumn>
+                                <TableRowColumn>{row.gender}</TableRowColumn>
+                                <TableRowColumn>{row.contact_name}</TableRowColumn>
                             </TableRow>
                         ))}
                     </TableBody>

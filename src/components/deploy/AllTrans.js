@@ -32,7 +32,6 @@ class AllTrans extends React.Component{
     render(){
         return(
             <div>
-                {this.state.errors && <p>Ocurrio un error</p>}
                 <Table height={'300px'}>
                     <TableHeader>
                         <TableRow>

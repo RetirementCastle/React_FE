@@ -33,7 +33,6 @@ class Allemployees extends React.Component{
     render(){
         return(
             <div>
-                {this.state.errors && <p>Ocurrio un error</p>}
                 <Table height={'300px'}>
                     <TableHeader>
                         <TableRow>
@@ -46,7 +45,7 @@ class Allemployees extends React.Component{
                     <TableBody showRowHover={true} stripedRows={true}>
                         {this.state.data.map( (row, index) => (
                             <TableRow key={index} selected={row.selected}>
-                                <TableRowColumn>{index}</TableRowColumn>
+                                <TableRowColumn>{row.id}</TableRowColumn>
                                 <TableRowColumn>{row.name}</TableRowColumn>
                                 <TableRowColumn>{row.title}</TableRowColumn>
                                 <TableRowColumn>{row.headquarter}</TableRowColumn>

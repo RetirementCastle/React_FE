@@ -5,8 +5,8 @@ import Allemployees from '../../components/deploy/Allemployees';
 const Showalle = () => {
 
   return (
-    <PageBase title="Residents"
-              navigation="Application / Residents">
+    <PageBase title="Employees"
+              navigation="Application / Employees">
       <div>
         <Allemployees/>
       </div>

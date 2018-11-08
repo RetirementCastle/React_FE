@@ -5,8 +5,8 @@ import DeployNH from '../../components/deploy/DeployNH';
 const NHInfo = () => {
 
   return (
-    <PageBase title="Resident Information"
-              navigation="Application / Resident Information">
+    <PageBase title="Nursing Home Information"
+              navigation="Application / Nursing Home Information">
       <div>
         <DeployNH/>
       </div>

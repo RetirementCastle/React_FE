@@ -31,7 +31,6 @@ class AllNH extends React.Component{
     render(){
         return(
             <div>
-                {this.state.errors && <p>Ocurrio un error</p>}
                 <Table height={'300px'}>
                     <TableHeader>
                         <TableRow>
@@ -42,7 +41,7 @@ class AllNH extends React.Component{
                     <TableBody showRowHover={true} stripedRows={true}>
                         {this.state.data.map( (row, index) => (
                             <TableRow key={index} selected={row.selected}>
-                                <TableRowColumn>{index}</TableRowColumn>
+                                <TableRowColumn>{row.idnursinghome}</TableRowColumn>
                                 <TableRowColumn>{row.name}</TableRowColumn>
                             </TableRow>
                         ))}
