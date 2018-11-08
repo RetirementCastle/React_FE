@@ -20,6 +20,7 @@ const data = {
       text: 'Transacciones',
       icon: <Web/>,
       items: [
+        {text: 'Todos',icon: <Web/>,link: '/transactions'},
         {text: 'Gastos',icon: <Web/>,link: '/expediture'},
         {text: 'Ingresos',icon: <Web/>,link: '/entry'}
       ]
@@ -28,6 +29,7 @@ const data = {
       items: [
         {text: 'Buscar',icon: <PermIdentity/>,link: '/info'},
         {text: 'Todos',icon: <PermIdentity/>,link: '/residents'},
+        {text: 'Nuevo',icon: <PermIdentity/>,link: '/new_res'},
       ] 
     },
     { text: 'Empleados', icon: <PermIdentity/>,

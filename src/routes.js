@@ -14,16 +14,20 @@ import NHInfo from './containers/deploy/NHInfo';
 import Showallr from './containers/deploy/Showallr';
 import Showalle from './containers/deploy/Showalle';
 import ShowallNH from './containers/deploy/ShowallNH';
+import ShowallTrans from './containers/deploy/ShowallTrans';
+import Newresident from './containers/deploy/Newresident';
 
 export default (
   <Route>
     <Route path="login" component={LoginPage}/>
     <Route path="/" component={App}>
       <IndexRoute component={Dashboard}/>
+      <Route path="new_res" component={Newresident}/>
       <Route path="emp_info" component={EmployeeInfo}/>
       <Route path="residents" component={Showallr}/>
       <Route path="employees" component={Showalle}/>
       <Route path="homes" component={ShowallNH}/>
+      <Route path="transactions" component={ShowallTrans}/>
       <Route path="NH" component={NHInfo}/>
       <Route path="info" component={Info}/>
       <Route path="dashboard" component={Dashboard}/>
