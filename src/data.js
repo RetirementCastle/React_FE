@@ -10,8 +10,12 @@ import ChevronRight from 'material-ui/svg-icons/navigation/chevron-right';
 
 const data = {
   menus: [
-    { text: 'Hogares Gediatricos', icon: <GridOn/>, link: '/dashboard' ,
-      items: []},
+    { text: 'Hogares Gediatricos', icon: <GridOn/>,
+      items: [
+        {text: 'Buscar por id',icon: <Web/>,link: '/NH'},
+        {text: 'Todos',icon: <Web/>,link: '/homes'},
+      ]
+    },
     {
       text: 'Transacciones',
       icon: <Web/>,
@@ -20,17 +24,23 @@ const data = {
         {text: 'Ingresos',icon: <Web/>,link: '/entry'}
       ]
     },
-    { text: 'Residentes', icon: <PermIdentity/>, link: '/info',
-      items: [] },
-    { text: 'Empleados', icon: <PermIdentity/>, link: '/emp_info',
-      items: [] },
-    { text: 'Asilos', icon: <PermIdentity/>, link: '/NH',
-      items: [] },
+    { text: 'Residentes', icon: <PermIdentity/>,
+      items: [
+        {text: 'Buscar',icon: <PermIdentity/>,link: '/info'},
+        {text: 'Todos',icon: <PermIdentity/>,link: '/residents'},
+      ] 
+    },
+    { text: 'Empleados', icon: <PermIdentity/>,
+      items: [
+        {text: 'Buscar',icon: <PermIdentity/>,link: '/emp_info'},
+        {text: 'Todos',icon: <PermIdentity/>,link: '/employees'},
+      ] 
+    },
     { text: 'Familiares', icon: <PermIdentity/>, link: '/dashboard',
       items: [] },
     { text: 'Reportes', icon: <Assessment/>, link: '/dashboard',
       items: [] },
-    { text: 'Dashboard', icon: <Assessment/>, link: '/dashboard',
+    { text: 'showall1', icon: <Assessment/>, link: '/showall1',
       items: [] },
     { text: 'Forms', icon: <Web/>, link: '/form',
       items: [] },
