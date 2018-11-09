@@ -36,6 +36,7 @@ const data = {
       items: [
         {text: 'Buscar',icon: <PermIdentity/>,link: '/emp_info'},
         {text: 'Todos',icon: <PermIdentity/>,link: '/employees'},
+        {text: 'Nuevo',icon: <PermIdentity/>,link: '/new_emp'},
       ] 
     },
     /*{ text: 'Familiares', icon: <PermIdentity/>, link: '/dashboard',

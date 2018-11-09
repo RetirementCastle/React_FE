@@ -31,7 +31,6 @@ class DeployNH extends React.Component{
         this.onChange = this.onChange.bind(this);
     }
     runQ(){
-        console.log("Se envia "+this.state.id)
         this.props.client.query({
            query: gql `
              query nursinghome($idNumber: ID!){
@@ -54,7 +53,7 @@ class DeployNH extends React.Component{
                  this.setState({
                      errors: result.errors,
                      nursinghome: result.data.nursinghome
-                 }),console.log(result);
+                 });
          });
     }
     onChange(event){
@@ -62,7 +61,6 @@ class DeployNH extends React.Component{
     }    
 
     render(){
-        console.log("Sedes de "+this.state.nursinghome+" con errores "+ this.state.errors)
         if(this.state.nursinghome !== null){
             renderData = <div>
                 <p>Nombre del asilo: {this.state.nursinghome.name}</p>

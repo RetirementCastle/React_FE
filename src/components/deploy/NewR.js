@@ -20,19 +20,15 @@ class NewR extends React.Component{
     constructor(props){
         super(props);
         this.state={
-            data:[],
+            data:{},
             errors:[],
             date: "",
         }
         this.onChange = this.onChange.bind(this);
         this.runM = this.runM.bind(this);
-        this.checkstate = this.checkstate.bind(this);
     }
     componentWillMount(){
         return this.setState({date: today})
-    }
-    checkstate(){
-        console.log(this.state);
     }
     runM(){
         this.props.client.mutate({
@@ -64,6 +60,7 @@ class NewR extends React.Component{
                        gender: this.state.data.gender,
                        state: this.state.data.state,
                        contact_name: this.state.data.contact_name,
+                       contact_phone: this.state.data.contact_phone,
                        diseases: this.state.data.diseases},
             errorPolicy: "all",
         }).then(result =>{
@@ -74,7 +71,12 @@ class NewR extends React.Component{
         const field = event.target.name;
         const tempdata = this.state.data;
         const value = event.target.value;
-        tempdata[field] = value;
+        const type = event.target.type;
+        if(type === "number"){
+            tempdata[field] = parseInt(value);
+        }else{
+            tempdata[field] = value;
+        }
         return this.setState({data: tempdata});
     }
     render(){
@@ -85,9 +87,10 @@ class NewR extends React.Component{
                 <TextField hintText="Género" name="gender" onChange={(e) => this.onChange(e)}/><br/>
                 <TextField hintText="Estado" name="state" onChange={(e) => this.onChange(e)}/><br/>
                 <TextField hintText="Nombre de contacto" name="contact_name" onChange={(e) => this.onChange(e)}/><br/>
-                <TextField hintText="Enfermedades" name="diseases" onChange={(e) => this.onChange(e)}/><br/>
+                <TextField hintText="Número de contacto" type="number" name="contact_phone" onChange={(e) => this.onChange(e)}/><br/>
+                <TextField hintText="Enfermedades" name="diseases" onChange={(e) => this.onChange(e)}/>
                 <IconButton tooltip="SVG Icon" onClick={this.runM}tooltip="search"><ActionSearch /></IconButton>
-                <IconButton tooltip="SVG Icon" onClick={this.checkstate}tooltip="search"><ActionSearch /></IconButton>
+                
             </div>
         )
     }
