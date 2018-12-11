@@ -15,14 +15,14 @@ import 'flexboxgrid/css/flexboxgrid.css';
 injectTapEventPlugin();
 
 const client = new ApolloClient({
-    uri: "http://35.199.81.116:4000/graphql"
+    uri: "http://35.199.81.116"
 });
 
 const App = () => (
     <ApolloProvider client={client}>
     <Router routes={routes} history={browserHistory} />
     </ApolloProvider>
-)
+);
 render(
     <App/>, document.getElementById('app')
 );

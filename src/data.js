@@ -42,9 +42,9 @@ const data = {
     /*{ text: 'Familiares', icon: <PermIdentity/>, link: '/dashboard',
       items: [] },
     { text: 'Reportes', icon: <Assessment/>, link: '/dashboard',
-      items: [] },
+      items: [] },*/
     { text: 'Login Page', icon: <PermIdentity/>, link: '/login',
-      items: [] }*/
+      items: [] }
   ],
 };
 

@@ -23,7 +23,7 @@ class NewR extends React.Component{
             data:{},
             errors:[],
             date: "",
-        }
+        };
         this.onChange = this.onChange.bind(this);
         this.runM = this.runM.bind(this);
     }
@@ -64,7 +64,9 @@ class NewR extends React.Component{
                        diseases: this.state.data.diseases},
             errorPolicy: "all",
         }).then(result =>{
-            console.log(result);
+            alert(`creado residente ${result.data.newResident._id}`)
+        }).catch((error)=> {
+            console.log(error)
         });
     }
     onChange(event){

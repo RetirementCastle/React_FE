@@ -44,7 +44,7 @@ class Entry extends Component{
     super(props);
     this.state = {
       items: []
-    }
+    };
   }
 
   componentWillMount(){
@@ -60,11 +60,9 @@ class Entry extends Component{
             total_amount: item.total_amount,
             balance: item.balance,
             observation: item.observation
-          }
-          this.setState({items:this.state.items.concat([data])})
-        })
-
-
+          };
+          this.setState({items:this.state.items.concat([data])});
+        });
       });
   }
 
@@ -89,7 +87,7 @@ class Entry extends Component{
                 <TableHeaderColumn style={styles.columns.name}>Nombre</TableHeaderColumn>
                 <TableHeaderColumn style={styles.columns.price}>Total</TableHeaderColumn>
                 <TableHeaderColumn style={styles.columns.category}>Saldo</TableHeaderColumn>
-                <TableHeaderColumn style={styles.columns.edit}></TableHeaderColumn>
+                {/*<TableHeaderColumn style={styles.columns.edit}></TableHeaderColumn>*/}
               </TableRow>
             </TableHeader>
             <TableBody>

@@ -10,7 +10,7 @@ class AllTrans extends React.Component{
         this.state={
             data:[],
             errors:[],
-        }
+        };
     }
     componentWillMount(){
         this.props.client.query({
@@ -26,7 +26,7 @@ class AllTrans extends React.Component{
             this.setState({
                 data:result.data.transactions,
                 errors:result.errors
-            })
+            });
         });
     }
     render(){

@@ -10,7 +10,7 @@ class AllNH extends React.Component{
         this.state={
             data:[],
             errors:[],
-        }
+        };
     }
     componentWillMount(){
         this.props.client.query({
@@ -25,7 +25,7 @@ class AllNH extends React.Component{
             this.setState({
                 data:result.data.nursinghomes,
                 errors:result.errors
-            })
+            });
         });
     }
     render(){

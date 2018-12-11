@@ -10,7 +10,7 @@ class Allresidents extends React.Component{
         this.state={
             data:[],
             errors:[],
-        }
+        };
     }
     componentWillMount(){
         this.props.client.query({
@@ -28,7 +28,7 @@ class Allresidents extends React.Component{
             this.setState({
                 data:result.data.residents,
                 errors:result.errors
-            })
+            });
         });
     }
     render(){

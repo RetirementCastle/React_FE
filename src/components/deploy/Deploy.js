@@ -63,7 +63,6 @@ class Deploy extends React.Component{
         }
         return(
             <div>
-                <p></p>
                 <TextField hintText="Search"  onChange={(e) => this.onChange(e)}/><IconButton tooltip="SVG Icon" onClick={this.runQ}tooltip="search"><ActionSearch /></IconButton>
                 {renderData}
             </div>
