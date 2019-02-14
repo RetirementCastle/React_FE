@@ -11,4 +11,3 @@ services:
       - /usr/app/node_modules
     ports:
       - "3000:3000"
-    # TODO: add environment variables
