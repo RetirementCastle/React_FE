@@ -15,11 +15,17 @@ class AllNH extends React.Component{
     componentWillMount(){
         this.props.client.query({
             query: gql `{
-                nursinghomes{
-                    idnursinghome
-                    name
-               }
+                query nursinghomes($correo: String!
+                                   $token: String!){
+                    nursinghomes(correo: $correo
+                                 token: $token){
+                        idnursinghome
+                        name
+                    }
+                }
             }`,
+            variables:{correo: sessionStorage.getItem("user"),
+                       token: sessionStorage.getItem("token")},
            errorPolicy: "all",
         }).then(result =>{
             this.setState({

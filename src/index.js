@@ -15,7 +15,7 @@ import 'flexboxgrid/css/flexboxgrid.css';
 injectTapEventPlugin();
 
 const client = new ApolloClient({
-    uri: "http://35.199.81.116"
+    uri: "http://104.196.22.25/"
 });
 
 const App = () => (

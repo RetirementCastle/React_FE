@@ -21,6 +21,7 @@ const data = {
       icon: <Web/>,
       items: [
         {text: 'Todos',icon: <Web/>,link: '/transactions'},
+        {text: 'Nuevo',icon: <Web/>,link: '/new_trans'},
         /*{text: 'Gastos',icon: <Web/>,link: '/expediture'},
         {text: 'Ingresos',icon: <Web/>,link: '/entry'}*/
       ]

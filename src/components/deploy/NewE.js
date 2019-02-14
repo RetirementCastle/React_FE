@@ -48,7 +48,9 @@ class NewE extends React.Component{
     runM(){
         this.props.client.mutate({
             mutation: gql `
-                mutation newEmployee($name: String
+                mutation newEmployee($correo: String!
+                                     $token: String!
+                                     $name: String
                                      $age: Int
                                      $title: String
                                      $email: String
@@ -60,11 +62,13 @@ class NewE extends React.Component{
                                      $identification: String
                                      $phone: String
                                      $ip: String
-                                     $token: String
+                                     $newtoken: String
                                      $operation: Int
                                      $created_at: String
                                      $last_login: String){
-                    newEmployee(name: $name
+                    newEmployee(correo: $correo
+                                token: $token
+                                name: $name
                                 age: $age
                                 title: $title
                                 email: $email
@@ -76,13 +80,15 @@ class NewE extends React.Component{
                                 identification: $identification
                                 phone: $phone
                                 ip: $ip
-                                token: $token
+                                newtoken: $newtoken
                                 operation: $operation
                                 created_at: $created_at
                                 last_login: $last_login)
                 }
             `,
-            variables:{name: this.state.data.name,
+            variables:{correo: sessionStorage.getItem("user"),
+                       token: sessionStorage.getItem("token"),
+                       name: this.state.data.name,
                        age: this.state.data.age,
                        title: this.state.data.title,
                        email: this.state.data.email,
@@ -94,7 +100,7 @@ class NewE extends React.Component{
                        identification: this.state.data.identification,
                        phone: this.state.data.phone,
                        ip: this.state.data.ip,
-                       token: this.state.data.token,
+                       newtoken: this.state.data.newtoken,
                        operation: this.state.data.operation,
                        created_at: this.state.date,
                        last_login: this.state.date},
@@ -117,7 +123,7 @@ class NewE extends React.Component{
                 <TextField hintText="ID" name="identification" onChange={(e) => this.onChange(e)}/><br/>
                 <TextField hintText="Teléfono" name="phone" onChange={(e) => this.onChange(e)}/><br/>
                 <TextField hintText="IP" name="ip" onChange={(e) => this.onChange(e)}/><br/>
-                <TextField hintText="Token" name="token" onChange={(e) => this.onChange(e)}/><br/>
+                <TextField hintText="Token" name="newtoken" onChange={(e) => this.onChange(e)}/><br/>
                 <TextField hintText="Operación" type="number" name="operation" onChange={(e) => this.onChange(e)}/><br/>
                 <IconButton tooltip="SVG Icon" onClick={this.runM}tooltip="search"><ActionSearch /></IconButton>
             </div>

@@ -15,6 +15,7 @@ import ShowallNH from './containers/deploy/ShowallNH';
 import ShowallTrans from './containers/deploy/ShowallTrans';
 import Newresident from './containers/deploy/Newresident';
 import Neweployee from './containers/deploy/Neweployee';
+import Newtransaction from './containers/deploy/Newtransaction';
 
 export default (
   <Route>
@@ -23,6 +24,7 @@ export default (
       <IndexRoute component={Dashboard}/>
       <Route path="new_res" component={Newresident}/>
       <Route path="new_emp" component={Neweployee}/>
+      <Route path="new_trans" component={Newtransaction}/>
       <Route path="emp_info" component={EmployeeInfo}/>
       <Route path="residents" component={Showallr}/>
       <Route path="employees" component={Showalle}/>

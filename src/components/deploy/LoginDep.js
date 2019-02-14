@@ -3,13 +3,15 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import Paper from 'material-ui/Paper';
 import RaisedButton from 'material-ui/RaisedButton';
 //import FlatButton from 'material-ui/FlatButton';
-import Checkbox from 'material-ui/Checkbox';
+//import Checkbox from 'material-ui/Checkbox';
 import {grey500, white} from 'material-ui/styles/colors';
 //import PersonAdd from 'material-ui/svg-icons/social/person-add';
 //import Help from 'material-ui/svg-icons/action/help';
 import TextField from 'material-ui/TextField';
-//import {Link} from 'react-router';
+import {Link} from 'react-router';
 import ThemeDefault from '../../theme-default';
+import { withApollo } from 'react-apollo';
+import gql from 'graphql-tag';
 
 const styles = {
     loginContainer: {
@@ -86,13 +88,25 @@ class LoginDep extends React.Component{
       return this.setState({[field]: value});
     }
     submit(){
-      fetch('http://35.199.81.116:8005/api-token-auth',{
-        method: 'POST',
-        body: JSON.stringify({username: "admin1", password: "password123"})
+      this.props.client.mutate({
+        mutation: gql `
+          mutation login($email: String!
+                         $password: String!){
+              login(email: $email
+                    password: $password){
+                      login{
+                        user
+                        token
+                      }
+              }
 
+          }
+        `,
+        variables:{email: this.state.email,
+                   password: this.state.password}
       }).then((response) => {
-        console.log(response)
-        sessionStorage.setItem("token", response.data.token);
+        sessionStorage.setItem("token", response.data.login.login.token);
+        sessionStorage.setItem("user", response.data.login.login.user);
       }).catch((error)=>{
         console.log(error)
       })
@@ -106,7 +120,7 @@ class LoginDep extends React.Component{
 
                     <form>
                         <TextField hintText="E-mail" floatingLabelText="E-mail"
-                                   fullWidth={true} name="user" onChange={(e) => this.onChange(e)}
+                                   fullWidth={true} name="email" onChange={(e) => this.onChange(e)}
                         />
                         <TextField hintText="Password" floatingLabelText="Password"
                                    fullWidth={true} type="password" name="password"
@@ -114,10 +128,16 @@ class LoginDep extends React.Component{
                         />
 
                         <div>
-                            <Checkbox label="Remember me" style={styles.checkRemember.style}
+                            {/*<Checkbox label="Remember me" style={styles.checkRemember.style}
                             labelStyle={styles.checkRemember.labelStyle}
                             iconStyle={styles.checkRemember.iconStyle}
-                            />
+                            />*/}
+                            <Link to="/">
+                              <RaisedButton label="Home" primary={true}
+                                            style={styles.loginBtn}
+                              />
+                            </Link>
+                            
 
                             <RaisedButton label="Login" primary={true}
                                           style={styles.loginBtn} onClick={(e)=> this.submit(e)}
@@ -155,4 +175,4 @@ class LoginDep extends React.Component{
         )
     }
 }
-export default LoginDep;
+export default withApollo(LoginDep);
