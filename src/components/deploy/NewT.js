@@ -33,14 +33,14 @@ class NewT extends React.Component{
     runM(){
         this.props.client.mutate({
             mutation: gql `
-                mutation newTransaction($correo: String!
-                                        $token: String!
-                                        $type_transation_id: Int!
-                                        $total_amount: Int
-                                        $observation: String
-                                        $balance: Int
-                                        $contact_name: String
-                                        $quantity: Int
+                mutation newTransaction($correo: String!,
+                                        $token: String!,
+                                        $type_transation_id: Int!,
+                                        $total_amount: Int,
+                                        $observation: String,
+                                        $balance: Int,
+                                        $contact_name: String,
+                                        $quantity: Int,
                                         $subtotal: Int
                                      ){
                     newTransaction(correo: $correo
