@@ -55,8 +55,8 @@ class NewT extends React.Component{
                                 )
                 }
             `,
-            variables:{correo: sessionStorage.getItem("user"),
-                       token: sessionStorage.getItem("token"),
+            variables:{correo: "mail@mail",
+                       token: "sasa",
                        type_transation_id: this.state.data.type_transation_id,
                        total_amount: this.state.data.total_amount,
                        observation: this.state.data.observation,
